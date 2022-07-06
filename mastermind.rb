@@ -137,13 +137,13 @@ class Game
     number = 0
     hit = 0
     brow = 0
-    index = 0
+    index = 1
     possible_numbers = nil
     loop do
       @computer_turn_count += 1
       # コンピュータがランダムな四桁の数字を生成
       if hit + brow == 4
-        possible_numbers = combination_of_item(number.split('')) if index.zero?
+        possible_numbers = combination_of_item(number.split('')) if index == 1
 
         number = possible_numbers[index]
         index += 1
@@ -198,5 +198,5 @@ class Game
   attr_accessor :user_name, :answer, :player_turn_count, :computer_turn_count
 end
 
-game = Game.new('Player 1')
+game = Game.new('Player')
 game.play
